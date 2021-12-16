@@ -1,0 +1,235 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionário</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<section class="formulario-container">
+    <form method="post" th:object="${pet}" th:action="@{/salvar}">
+        <fieldset class="grupo">
+            <div>
+                <h1>Questionário</h1>
+                <br>
+                <h5>Nome:</h5>
+                <input type="text" name='nome' id="nome" th:field="*{nome}">
+            </div>
+
+            <div>
+                <h5>Matrícula:(Caso seja aluno da UFRN)</h5>
+                <input type="text" name="Matricula" id="Matricula" required>
+            </div>
+
+            <div>
+                <label>Sexo:
+                    <input type="checkbox" nome="Masculido" value="Masculino"th:field="*{sexo}"> Masculino
+                </label>
+                <label>
+                    <input type="checkbox" nome="Feminino" value="Feminino"th:field="*{sexo}"> Feminino
+                </label>
+            </div>
+
+            <div>
+                <h5>Idade:</h5>
+                <input type="text" name='idade' id="idade" th:field="*{idade}">
+            </div>
+
+            <div>
+                <h5>Peso:</h5>
+                <input type="text" name='peso' id="peso" th:field="*{peso}">
+            </div>
+
+            <div>
+                <h5>Altura (Em cm):</h5>
+                <input type="text" name='altura' id="altura" th:field="*{altura}">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>1. Qual seu tipo de moradia?</h5>
+                <input type="checkbox" name="casa" id="casa" value="casa" th:field="*{moradia}">
+                <label for="casa">Casa</label>
+                <input type="checkbox" name="apartamento" id="apartamento" value="apartamento" th:field="*{moradia}">
+                <label for="apartamento">Apartamento</label>
+                <input type="checkbox" name="conjugado" id="conjugado" value="conjugado" th:field="*{moradia}">
+                <label for="conjugado">Conjugado</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>2. Caso seja apartamento, em qual andar da edificação seu local de trabalho está localizado?</h5>
+                <input type="checkbox" name="primeiro" id="primeiro" value="primeiro" th:field="*{andar}">
+                <label for="primeiro">Primeiro andar</label>
+                <input type="checkbox" name="segundo" id="segundo" value="segundo" th:field="*{andar}">
+                <label for="segundo">Segundo andar</label>
+                <input type="checkbox" name="terceiro" id="terceiro" value="terceiro" th:field="*{andar}">
+                <label for="terceiro">Terceiro andar</label>
+                <label for="nome">Outros. Especifique: </label>
+                <input type="text" name='outros' id="outros" th:field="*{andar}">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>3. Qual é a sua sensação térmica neste momento? (Assinale a alternativa mais apropriada)</h5>
+                <input type="checkbox" name="muitoCalor" id="muitoCalor" value="muito Calor" th:field="*{sencacao}">
+                <label for="muitoCalor">Com muito calor</label>
+                <input type="checkbox" name="comCalor" id="comCalor" value="com Calor" th:field="*{sencacao}">
+                <label for="comCalor">Com calor</label>
+                <input type="checkbox" name="leveCalor" id="leveCalor" value="leve Calor" th:field="*{sencacao}">
+                <label for="leveCalor">Levemente com calor</label>
+                <input type="checkbox" name="neutro" id="neutro" value="neutro" th:field="*{sencacao}">
+                <label for="neutro">Neutro</label>
+                <input type="checkbox" name="leveFrio" id="leveFrio" value="leve Frio" th:field="*{sencacao}">
+                <label for="leveFrio">Leve frio</label>
+                <input type="checkbox" name="comFrio" id="comFrio" value="com Frio" th:field="*{sencacao}">
+                <label for="comFrio">Com frio</label>
+                <input type="checkbox" name="muitoFrio" id="muitoFrio" value="muito Frio" th:field="*{sencacao}">
+                <label for="muitoFrio">Com muito frio</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>4. Você preferiria estar:</h5>
+                <input type="checkbox" name="maisAquecido" id="maisAquecido" value="mais Aquecido" th:field="*{preferencia}">
+                <label for="maisAquecido">Mais aquecido</label>
+                <input type="checkbox" name="assimMesmo" id="assimMesmo" value="assim Mesmo" th:field="*{preferencia}">
+                <label for="assimMesmo">Assim mesmo</label>
+                <input type="checkbox" name="maisResfriado" id="maisResfriado" value="mais Resfriado" th:field="*{preferencia}">
+                <label for="maisResfriado">Mais resfriado</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>5. Para você este ambiente térmico é:</h5>
+                <input type="checkbox" name="aceitavel" id="aceitavel" value="aceitavel" th:field="*{ambiente}">
+                <label for="aceitavel">Aceitável</label>
+                <input type="checkbox" name="inaceitavel" id="inaceitavel" value="inaceitavel" th:field="*{ambiente}">
+                <label for="inaceitavel">Inaceitável</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>6. Como você se sente com relação ao movimento do ar neste momento?</h5>
+                <input type="checkbox" name="inaceitavelPoucoAr" id="inaceitavelPoucoAr" value="inaceitavel Pouco Ar" th:field="*{movimentoAr}">
+                <label for="inaceitavelPoucoAr">Inaceitável, pouco movimento de ar</label>
+                <input type="checkbox" name="inaceitavelMuitoAr" id="inaceitavelMuitoAr" value="inaceitavel Muito Ar" th:field="*{movimentoAr}">
+                <label for="inaceitavelMuitoAr">Inaceitável, muito movimento de ar</label>
+                <input type="checkbox" name="aceitavelMuitoAr" id="aceitavelPoucoAr" value="aceitavel Muito Ar" th:field="*{movimentoAr}">
+                <label for="aceitavelMuitoAr">Aceitável, pouco movimento de ar</label>
+                <input type="checkbox" name="aceitavelMuitoAr" id="aceitavelMuitoAr" value="aceitavel Muito Ar" th:field="*{movimentoAr}">
+                <label for="aceitavelMuitoAr">Aceitável, muito movimento de ar</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>7. Considerando sua resposta anterior, qual a sua preferência com relação ao movimento do ar neste momento?</h5>
+                <input type="checkbox" name="maiorMovimento" id="maiorMovimento" value="maior Movimento" th:field="*{estar}">
+                <label for="maiorMovimento">Maior movimento do ar</label>
+                <input type="checkbox" name="naoMudar" id="naoMudar" value="nao Mudar" th:field="*{estar}">
+                <label for="naoMudar">Não mudar</label>
+                <input type="checkbox" name="menorMovimento" id="menorMovimento" value="menor Movimento" th:field="*{estar}">
+                <label for="menorMovimento">Menor movimento do ar</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>8. Você está próximo(a) de uma parede externa? (aprox.3 metros).</h5>
+                <input type="checkbox" name="sim8" id="sim8" value="sim8" th:field="*{parede}">
+                <label for="sim8">Sim</label>
+                <input type="checkbox" name="nao8" id="nao8" value="nao8" th:field="*{parede}">
+                <label for="nao8">Não</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>9. Você está próximo(a) de uma janela com abertura externa? (aprox. 3 metros).</h5>
+                <input type="checkbox" name="sim9" id="sim9" value="sim9" th:field="*{janela}">
+                <label for="sim9">Sim</label>
+                <input type="checkbox" name="nao9" id="nao9" value="nao9" th:field="*{janela}">
+                <label for="nao9">Não</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>10. Informe a roupa que você está utilizando agora.</h5>
+                <input type="text" name='roupa' id="roupa" th:field="*{roupa}">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>11. Qual o seu nível de atividade neste momento? (assinale a opção mais apropriada).</h5>
+                <input type="checkbox" name="sentadoLeve" id="sentadoLeve" value="sentado Leve" th:field="*{atividade}">
+                <label for="sentadoLeve">Sentado, atividade leve (relaxado, lendo)</label>
+                <input type="checkbox" name="sentadoModerada" id="sentadoModerada" value="sentado Moderada" th:field="*{atividade}">
+                <label for="sentadoModerada">Sentado, atividade moderada (digitando)</label>
+                <input type="checkbox" name="emPe" id="emPe" value="em Pe" th:field="*{atividade}">
+                <label for="emPe">Em pé, relaxado</label>
+                <input type="checkbox" name="levePe" id="levePe" value="leve Pe" th:field="*{atividade}">
+                <label for="levePe">Atividade leve em pé</label>
+                <input type="checkbox" name="moderadaPe" id="moderadaPe" value="moderada Pe" th:field="*{atividade}">
+                <label for="moderadaPe">Atividade moderada em pé</label>
+                <input type="checkbox" name="atvPesada" id="atvPesada" value="atv Pesada" th:field="*{atividade}">
+                <label for="atvPesada">Atividade pesada</label>
+                <label for="nome">Outros. Especifique: </label>
+                <input type="text" name='outros1' id="outros 1" th:field="*{atividade}">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>12. Em relação ao ano passado, você considera que nesse mesmo período houve mudança na temperatura?</h5>
+                <input type="checkbox" name="simQuente12" id="simQuente12" value="sim Quente12" th:field="*{anoPassado}">
+                <label for="simQuente12">Sim, está mais quente</label>
+                <input type="checkbox" name="simFrio12" id="simFrio12" value="sim Frio12" th:field="*{anoPassado}">
+                <label for="simFrio12">Sim, está mais frio</label>
+                <input type="checkbox" name="nao12" id="nao12" value="nao 12" th:field="*{anoPassado}">
+                <label for="nao12">Não</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>13. Em relação ao mês passado, você considera que nesse mesmo período houve mudança na temperatura?</h5>
+                <input type="checkbox" name="simQuente13" id="simQuente13" value="sim Quente13" th:field="*{mesPassado}">
+                <label for="simQuente13">Sim, está mais quente</label>
+                <input type="checkbox" name="simFrio13" id="simFrio13" value="sim Frio13" th:field="*{mesPassado}">
+                <label for="simFrio13">Sim, está mais frio</label>
+                <input type="checkbox" name="nao13" id="nao13" value="nao13" th:field="*{mesPassado}">
+                <label for="nao12">Não</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>14. Em relação ao ano passado, você considera que nesse mesmo período:</h5>
+                <input type="checkbox" name="choveuMais" id="choveuMais" value="choveu Mais" th:field="*{mesmoPeriodo}">
+                <label for="choveuMais">Choveu mais</label>
+                <input type="checkbox" name="choveuMenos" id="choveuMenos" value="choveu Menos" th:field="*{mesmoPeriodo}">
+                <label for="choveuMenos">Choveu menos</label>
+                <input type="checkbox" name="choveuMesmo" id="choveuMesmo" value="choveu Mesmo" th:field="*{mesmoPeriodo}">
+                <label for="choveuMesmo">Choveu o mesmo</label>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div>
+                <h5>15. Qual a temperatura que está marcando no aplicativo do windows?</h5>
+                <input type="text" name='windows' id="windows" th:field="*{temperaturaWindows}">
+            </div>
+        </fieldset>
+        <br>
+        <button class="botaoConcluido" type="submit">Concluído</button>
+    </form>
+</section>
+</html>

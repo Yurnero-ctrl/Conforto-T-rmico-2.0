@@ -1,0 +1,513 @@
+/*vatiaveis globais*/
+:root{
+    --white-color: #ffffff;
+    --primary-color: #2c1029;
+    --secondary-color: #ff5b1b;
+    --gap: 3rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/*fontes que vão ficar no body*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+/*Estilização da Nav  */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #32082a;
+    height: 7vh;
+    padding: 0.25rem 0.75rem;
+}
+
+nav a{
+    color: var(--white-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav #logo {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+}
+
+nav a:hover{
+    opacity: 0.7;
+}
+
+nav .layout-list{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+nav .layout-list li{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+nav .layout-list li a {
+    text-decoration: none;
+}
+
+nav .layout-list.active{
+    transform: translateX(0);
+}
+
+nav .mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+nav .mobile-menu div{
+    width: 3.2rem;
+    height: 0.2rem;
+    background: #ffffff;
+    margin: 0.8rem;
+    transition: 0.3s;
+}
+
+nav .mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+nav .mobile-menu.active .line2{
+    opacity: 0;
+}
+
+nav .mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/*Background da Intro*/
+
+#intro {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-image: url("https://images8.alphacoders.com/679/679478.jpg");
+    background-size: cover;
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#intro h1{
+    margin-bottom: 20rem;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12rem;
+    color: var(--secondary-color);
+}
+
+/*Conforto termico*/
+
+.conforto-content{
+    height: 100vh;
+    width: 100%;
+
+    background: var(--primary-color);
+}
+
+.conforto-content div {
+    max-width: 60rem;
+    margin: 0 auto;
+
+    padding-top: 5rem;
+
+    color: var(--white-color);
+}
+
+.conforto-content div h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 4.5rem;
+
+    padding-bottom: 1.5rem;
+}
+
+.conforto-content div p {
+    text-align: justify;
+}
+
+.fatores {
+    width: 100%;
+    text-align: center;
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+/*cards*/
+
+.card-container {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    place-items: center;
+
+    background-image: linear-gradient(180deg, #2c1029, #feddc9);
+    background-size: cover;
+    background-clip: padding-box;
+    background-position: top;
+}
+
+.card-container .card{
+    width: 37rem;
+    height: 21.5rem;
+
+    align-self: center;
+
+    position: relative;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    border-radius: 8px;
+
+    transition: 0.3s ease-in-out;
+}
+
+.card-container .card:hover{
+    height: 42rem;
+}
+
+.card-container .card .imgCard{
+    position: relative;
+
+    width: 26rem;
+    height: 26rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-container .card .imgCard img{
+    position: absolute;
+    top: -25px;
+
+    max-width: 250px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.card-container .card .card-content{
+    margin-top: -12rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    color: #212121;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.card-container .card:hover .card-content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -4rem;
+    transition-delay: 0.3s;
+}
+
+
+footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    padding: 3rem;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+/*Formulário*/
+
+.formulario-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+    background: #feddc9;
+}
+
+.formulario-container h1{
+    color: var(--primary-color);
+}
+
+.formulario-container{
+    float: right;
+    margin-right: 0.2rem;
+}
+
+.botaoConcluido{
+    position: relative;
+    width: 20rem;
+    padding: 2rem;
+    color: #32082a;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    border: 5px solid #32082a;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: 1.5s;
+}
+
+.botaoConcluido:hover{
+    box-shadow: 0 0px 20px 0 #32082a inset, 0 5px 10px 0 #32082a,
+    0 0px 20px 0 #32082a inset, 0 5px 10px 0 #32082a;
+    text-shadow: 0 0 5px #32082a, 0 0 5px #32082a;
+}
+
+@media (max-width: 1300px) {
+    .conforto-content {
+        height: 140vh;
+    }
+
+    .card-container .card {
+        width: 27rem;
+        height: 25rem;
+    }
+
+    .card-container .card:hover{
+        height: 37rem;
+    }
+
+    .card-container .card .imgCard img{
+        max-width: 200px;
+        height: 120px;
+    }
+
+    .card-container .card .card-content{
+        margin-top: -5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    footer a{
+        height: 6rem;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #intro h1{
+        margin-bottom: 23rem;
+        font-size: 10rem;
+    }
+
+    .card-container {
+        height: 220vh;
+
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-container .card {
+        width: 26rem;
+        height: 17rem;
+    }
+
+    .card-container .card:hover{
+        height: 25rem;
+    }
+
+    .card-container .card .imgCard img{
+        max-width: 200px;
+        height: 150px;
+    }
+
+    .card-container .card .card-content{
+        margin-top: -0.5rem;
+        padding: 0.15rem 0.75rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 770px) {
+    nav .layout-list li{
+        font-size: 1.5rem;
+    }
+
+    #intro h1{
+        margin-bottom: 23rem;
+        font-size: 7rem;
+    }
+
+}
+
+@media (max-width: 550px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    nav {
+        position: fixed;
+    }
+
+    nav .layout-list {
+        z-index: 2;
+        position: absolute;
+        top: 5vh;
+        right: 0;
+        width: 50vw;
+        height: 95vh;
+        background: #32082a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    nav .layout-list li{
+        margin: 0;
+        opacity: 0;
+    }
+
+    nav .layout-list li a {
+        font-size: 1.75rem;
+    }
+
+    nav .mobile-menu{
+        display: block;
+    }
+
+    #intro h1{
+        margin-bottom: 20rem;
+        font-size: 5rem;
+    }
+
+    .conforto-content div {
+        max-width: 90%;
+    }
+
+    .conforto-content div h2 {
+        font-size: 4rem;
+    }
+
+    .conforto-content div p {
+        font-size: 1.5rem;
+    }
+
+    .card-container .card {
+        width: 20rem;
+        height: 17rem;
+    }
+
+    .card-container .card .imgCard img{
+        max-width: 180px;
+        height: 130px;
+    }
+
+    .card-container .card .card-content{
+        margin-top: -0.5rem;
+        padding: 0.15rem 0.5rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 450px) {
+    nav .layout-list li a {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    #intro h1{
+        margin-bottom: 15rem;
+        font-size: 3rem;
+    }
+
+    .conforto-content {
+        height: 170vh;
+    }
+
+    .card-container {
+        height: 350vh;
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    .card-container .card {
+        width: 25rem;
+        height: 17rem;
+    }
+
+    .card-container .card:hover {
+        height: 22rem;
+    }
+
+    .card-container .card .imgCard img{
+        max-width: 200px;
+        height: 120px;
+    }
+
+    .card-container .card .card-content{
+        margin-top: -1.5rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes layoutLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
